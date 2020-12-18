@@ -62,7 +62,6 @@ function setup() {
   World.add(world,ball);
 
   slingShot = new Slingshot(this.ball,{x:100,y:200});
-
 }
 function draw() {
   background(56,44,44); 
@@ -71,7 +70,7 @@ function draw() {
   //text(mouseX + ',' + mouseY, 10, 15);
   textSize(20);
   fill("lightyellow");
-  text("Drag the Hexagonal Stone and Release it, to launch it towards the blocks",100,30);
+  text("Press Space to get a second chance",200,30);
 
   ground.display();
   stand1.display();
@@ -121,4 +120,10 @@ function mouseDragged(){
 }
 function mouseReleased(){
   slingShot.fly();
+}
+
+function keyPressed() {
+  if (keyCode === 32) {
+    slingShot.attach(this.ball);
+  }
 }

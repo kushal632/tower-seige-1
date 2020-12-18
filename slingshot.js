@@ -11,6 +11,11 @@ class Slingshot{
         World.add(world, this.sling);
 
     }
+
+    attach(body){
+        this.sling.bodyA = body;
+    }
+
     fly(){
         this.sling.bodyA = null;
     }
@@ -23,6 +28,5 @@ class Slingshot{
         stroke("turquoise");
         line(pointA.x, pointA.y, pointB.x, pointB.y);
         }
-        }
-    
-}
+      }
+    }
